@@ -10,19 +10,19 @@ class Feedback extends Component {
   static defaultProps = {};
   static propTypes = {};
 
-  handleButtonGood = event => {
+  handleButtonGood = () => {
     this.setState(prevState => {
       return { good: prevState.good + 1 };
     });
   };
 
-  handleButtonNeutral = event => {
+  handleButtonNeutral = () => {
     this.setState(prevState => {
       return { neutral: prevState.neutral + 1 };
     });
   };
 
-  handleButtonBad = event => {
+  handleButtonBad = () => {
     this.setState(prevState => {
       return { bad: prevState.bad + 1 };
     });
@@ -54,8 +54,9 @@ class Feedback extends Component {
         <p>Total: {this.state.good + this.state.neutral + this.state.bad}</p>
         <p>
           Positive feedback:{' '}
-          {(this.state.good + this.state.neutral + this.state.bad) /
-            this.state.good}
+          {100 /
+            ((this.state.good + this.state.neutral + this.state.bad) /
+              this.state.good)}{' '}
           %
         </p>
       </>
