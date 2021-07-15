@@ -1,4 +1,6 @@
 import React from 'react';
+import Notification from '../Notification/Notification';
+import Section from '../Section/Section';
 
 const Statistics = ({
   title,
@@ -10,14 +12,18 @@ const Statistics = ({
 }) => {
   return (
     <>
-      <ul>
-        {title}
-        <li>Good: {good}</li>
-        <li>Neutral: {neutral}</li>
-        <li>Bad: {bad}</li>
-        <li>Total: {total(good, neutral, bad)}</li>
-        <li>Positive feedback: {positivePercentage(good, neutral, bad)}</li>
-      </ul>
+      <p>{title}</p>
+      {good || neutral || bad ? (
+        <ul>
+          <li>Good: {good}</li>
+          <li>Neutral: {neutral}</li>
+          <li>Bad: {bad}</li>
+          <li>Total: {total(good, neutral, bad)}</li>
+          <li>Positive feedback: {positivePercentage(good, neutral, bad)}</li>
+        </ul>
+      ) : (
+        <Notification message="No feedback given" />
+      )}
     </>
   );
 };

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import FeedbackOptions from './Components/FeedbackOptions/FeedbackOptions';
 import Statistics from './Components/Statistics/Statistics';
+// import Notification from './Components/Notification/Notification';
 
 class App extends Component {
   state = {
@@ -48,3 +49,7 @@ class App extends Component {
 }
 
 export default App;
+
+//Створи компонент <Section title="">, який рендерить секцію з заголовком
+// і дітей(children).Оберни кожен з < Statistics > і < FeedbackOptions >
+// в створений компонент секції.
